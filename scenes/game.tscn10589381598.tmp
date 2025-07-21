@@ -14,27 +14,27 @@ position = Vector2(55, 99)
 
 [node name="Hoe" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(120, 66)
-talk = 4
-romance = 15
-party = 13
-sports = 22
-subToDom = -0.404
-cuteToHot = 0.566
+stamina = 100
+talk = 0
+romance = 0
+party = 0
+sports = 0
+subToDom = 0.0
 
 [node name="Hoe2" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(88, 66)
-talk = 30
-romance = 15
-party = 3
-sports = 7
-subToDom = 0.525
-cuteToHot = 0.646
+stamina = 100
+talk = 0
+romance = 0
+party = 0
+sports = 0
+subToDom = 0.0
 
 [node name="Hoe3" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(56, 66)
-talk = 8
-romance = 8
-party = 8
-sports = 14
-subToDom = -0.566
-cuteToHot = -0.768
+stamina = 100
+talk = 0
+romance = 0
+party = 0
+sports = 0
+subToDom = 0.0
