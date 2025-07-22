@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb7bkeb8rtyse"]
+[gd_scene load_steps=6 format=3 uid="uid://bb7bkeb8rtyse"]
 
+[ext_resource type="Script" uid="uid://cdu3ieqp6gfk7" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://lqllx4bhg378" path="res://scenes/stage1.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://ch3o2t286utub" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dnr2xc1jdgbeu" path="res://scenes/hoe.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://d048fj6hgeu2i" path="res://scripts/stats.gd" id="4_lbhrr"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_iywne")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Stage" parent="." instance=ExtResource("1_uwrxv")]
 
@@ -12,29 +18,43 @@
 z_index = 4
 position = Vector2(55, 99)
 
-[node name="Hoe" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Hoe" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("3_lnu2h")]
 position = Vector2(120, 66)
-talk = 4
-romance = 15
-party = 13
-sports = 22
-subToDom = -0.404
-cuteToHot = 0.566
+stats = NodePath("Stats")
 
-[node name="Hoe2" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(88, 66)
-talk = 30
-romance = 15
-party = 3
+[node name="Stats" type="Node" parent="Hoe"]
+script = ExtResource("4_lbhrr")
+talk = 14
+romance = 20
+party = 2
 sports = 7
-subToDom = 0.525
-cuteToHot = 0.646
+subToDom = 0.648
+cuteToHot = -0.552
+metadata/_custom_type_script = "uid://d048fj6hgeu2i"
+
+[node name="Hoe2" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("3_lnu2h")]
+position = Vector2(88, 66)
+stats = NodePath("Stats")
+
+[node name="Stats" type="Node" parent="Hoe2"]
+script = ExtResource("4_lbhrr")
+talk = 5
+romance = 6
+party = 13
+sports = 16
+subToDom = 0.553
+cuteToHot = 0.324
+metadata/_custom_type_script = "uid://d048fj6hgeu2i"
 
 [node name="Hoe3" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(56, 66)
+
+[node name="Stats" type="Node" parent="Hoe3"]
+script = ExtResource("4_lbhrr")
 talk = 8
 romance = 8
-party = 8
-sports = 14
-subToDom = -0.566
-cuteToHot = -0.768
+party = 9
+sports = 13
+subToDom = -0.475
+cuteToHot = -0.47
+metadata/_custom_type_script = "uid://d048fj6hgeu2i"
