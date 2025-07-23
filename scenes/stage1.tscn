@@ -16,7 +16,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAAJAAMAAAADAAMAAAAHAAMAAAADAAIAAAAEAAk
 tile_set = ExtResource("1_v53cv")
 
 [node name="JohnSpawnPoint" type="Area2D" parent="."]
-position = Vector2(168, 130)
+position = Vector2(268, 130)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JohnSpawnPoint"]
 position = Vector2(0, 6)
