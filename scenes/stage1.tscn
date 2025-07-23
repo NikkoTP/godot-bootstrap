@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=4 uid="uid://lqllx4bhg378"]
+[gd_scene load_steps=3 format=4 uid="uid://lqllx4bhg378"]
 
 [ext_resource type="TileSet" uid="uid://c251ihqkcunoq" path="res://scenes/world_tileset.tres" id="1_v53cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v53cv"]
+size = Vector2(12, 14)
 
 [node name="Stage" type="Node"]
 
@@ -12,28 +15,60 @@ tile_set = ExtResource("1_v53cv")
 tile_map_data = PackedByteArray("AAADAAEAAAAJAAMAAAADAAMAAAAHAAMAAAADAAIAAAAEAAkAAAAFAAEAAAAJAAQAAAAFAAMAAAAHAAQAAAAFAAIAAAAEAA0AAAAHAAEAAAAJAAMAAAAHAAMAAAAHAAMAAAAHAAIAAAAEAAsAAAADAAcAAAAHAAMAAAACAAcAAAAIAAMAAAAJAAoAAAABAAYAAAAIAAoAAAABAAQAAAAHAAoAAAABAAYAAAAGAAoAAAABAAQAAAAFAAoAAAABAAYAAAAEAAoAAAABAAQAAAADAAoAAAABAAYAAAACAAoAAAABAAQAAAABAAoAAAABAAYAAAAAAAoAAAABAAQAAAAKAAcAAAAGAAUAAAAKAAYAAAAGAAQAAAAKAAUAAAAGAAQAAAAKAAQAAAAGAAMAAAAKAAMAAAAGAAUAAAAKAAIAAAAGAAQAAAAKAAEAAAAGAAMAAAAKAAAAAAAGAAYAAAAKAP//AAAIAAcAAAAKAAkAAAAIAAQAAAAKAAoAAAABAAQAAAAJAP//AAAGAAMAAAAIAP//AAAGAAMAAAAHAP//AAAGAAMAAAAGAP//AAAGAAMAAAAFAP//AAAGAAQAAAAFAP7/AAAGAAMAAAAEAP//AAAGAAQAAAADAP//AAAGAAQAAAACAP7/AAAGAAUAAAACAP3/AAAGAAMAAAABAP//AAAGAAUAAAABAP7/AAAGAAMAAAD+/wAAAAAGAAUAAAD+////AAAGAAQAAAD+//7/AAAGAAQAAAD+//3/AAAGAAMAAAD//woAAAABAAYAAAD9/wgAAAAGAAUAAAD9/wcAAAAGAAQAAAD9/wYAAAAGAAQAAAD9/wUAAAAGAAMAAAA=")
 tile_set = ExtResource("1_v53cv")
 
-[node name="JohnSpawnPoint" type="Node2D" parent="."]
+[node name="JohnSpawnPoint" type="Area2D" parent="."]
 position = Vector2(168, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JohnSpawnPoint"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
 
 [node name="QueuePositions" type="Node" parent="."]
 
-[node name="JohnQueuePos0" type="Node2D" parent="QueuePositions"]
+[node name="JohnQueuePos0" type="Area2D" parent="QueuePositions"]
 position = Vector2(152, 130)
 
-[node name="JohnQueuePos1" type="Node2D" parent="QueuePositions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos0"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
+
+[node name="JohnQueuePos1" type="Area2D" parent="QueuePositions"]
 position = Vector2(136, 130)
 
-[node name="JohnQueuePos2" type="Node2D" parent="QueuePositions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos1"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
+
+[node name="JohnQueuePos2" type="Area2D" parent="QueuePositions"]
 position = Vector2(120, 130)
 
-[node name="JohnQueuePos3" type="Node2D" parent="QueuePositions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos2"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
+
+[node name="JohnQueuePos3" type="Area2D" parent="QueuePositions"]
 position = Vector2(104, 130)
 
-[node name="JohnQueuePos4" type="Node2D" parent="QueuePositions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos3"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
+
+[node name="JohnQueuePos4" type="Area2D" parent="QueuePositions"]
 position = Vector2(88, 130)
 
-[node name="JohnQueuePos5" type="Node2D" parent="QueuePositions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos4"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
+
+[node name="JohnQueuePos5" type="Area2D" parent="QueuePositions"]
 position = Vector2(72, 130)
 
-[node name="JohnQueuePos6" type="Node2D" parent="QueuePositions"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos5"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
+
+[node name="JohnQueuePos6" type="Area2D" parent="QueuePositions"]
 position = Vector2(56, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QueuePositions/JohnQueuePos6"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_v53cv")
