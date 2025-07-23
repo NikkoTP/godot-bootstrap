@@ -13,27 +13,27 @@ tile_map_data = PackedByteArray("AAADAAEAAAAJAAMAAAADAAMAAAAHAAMAAAADAAIAAAAEAAk
 tile_set = ExtResource("1_v53cv")
 
 [node name="JohnSpawnPoint" type="Node2D" parent="."]
-position = Vector2(168, 138)
+position = Vector2(168, 130)
 
 [node name="QueuePositions" type="Node" parent="."]
 
 [node name="JohnQueuePos0" type="Node2D" parent="QueuePositions"]
-position = Vector2(152, 136)
+position = Vector2(152, 130)
 
 [node name="JohnQueuePos1" type="Node2D" parent="QueuePositions"]
-position = Vector2(136, 136)
+position = Vector2(136, 130)
 
 [node name="JohnQueuePos2" type="Node2D" parent="QueuePositions"]
-position = Vector2(120, 136)
+position = Vector2(120, 130)
 
 [node name="JohnQueuePos3" type="Node2D" parent="QueuePositions"]
-position = Vector2(104, 136)
+position = Vector2(104, 130)
 
 [node name="JohnQueuePos4" type="Node2D" parent="QueuePositions"]
-position = Vector2(88, 136)
+position = Vector2(88, 130)
 
 [node name="JohnQueuePos5" type="Node2D" parent="QueuePositions"]
-position = Vector2(72, 136)
+position = Vector2(72, 130)
 
 [node name="JohnQueuePos6" type="Node2D" parent="QueuePositions"]
-position = Vector2(56, 136)
+position = Vector2(56, 130)
