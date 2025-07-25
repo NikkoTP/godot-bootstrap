@@ -1,0 +1,114 @@
+[gd_scene load_steps=2 format=3 uid="uid://buqamrk34t3pe"]
+
+[ext_resource type="Script" uid="uid://ixgcbj5gqm8a" path="res://scripts/stats_window.gd" id="1_06noq"]
+
+[node name="StatsWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 302.0
+offset_bottom = 212.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_06noq")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_right = 302.0
+offset_bottom = 212.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelTitle" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelStamina" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label5" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelStaminaValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="LabelTalk" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label8" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelTalkValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="LabelRomance" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label11" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelRomanceValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="LabelParty" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label14" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelPartyValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="LabelSports" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label17" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelSportsValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="LabelCuteToHot" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label20" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelCuteToHotValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="LabelSubToDom" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Label21" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LabelSubToDomValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "sfadfafasfffa"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -46.0
+offset_right = 374.0
+offset_bottom = 274.0
