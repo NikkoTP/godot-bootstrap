@@ -5,110 +5,153 @@
 [node name="StatsWindow" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 302.0
-offset_bottom = 212.0
+offset_right = 71.0
+offset_bottom = 62.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_06noq")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 222.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
-offset_right = 302.0
-offset_bottom = 212.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 3
 
-[node name="Label" type="Label" parent="GridContainer"]
+[node name="Empty" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelTitle" type="Label" parent="GridContainer"]
+[node name="LabelTitle" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "sfadfafasfffa"
 
-[node name="Label3" type="Label" parent="GridContainer"]
+[node name="Empty2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelStamina" type="Label" parent="GridContainer"]
+[node name="LabelStamina" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="GridContainer"]
+[node name="Empty3" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelStaminaValue" type="Label" parent="GridContainer"]
+[node name="LabelStaminaValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 8
+text = "0"
 
-[node name="LabelTalk" type="Label" parent="GridContainer"]
+[node name="LabelTalk" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label8" type="Label" parent="GridContainer"]
+[node name="Empty4" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelTalkValue" type="Label" parent="GridContainer"]
+[node name="LabelTalkValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 8
+text = "0"
 
-[node name="LabelRomance" type="Label" parent="GridContainer"]
+[node name="LabelRomance" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label11" type="Label" parent="GridContainer"]
+[node name="Empty5" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelRomanceValue" type="Label" parent="GridContainer"]
+[node name="LabelRomanceValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 8
+text = "0"
 
-[node name="LabelParty" type="Label" parent="GridContainer"]
+[node name="LabelParty" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label14" type="Label" parent="GridContainer"]
+[node name="Empty6" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelPartyValue" type="Label" parent="GridContainer"]
+[node name="LabelPartyValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 8
+text = "0"
 
-[node name="LabelSports" type="Label" parent="GridContainer"]
+[node name="LabelSports" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label17" type="Label" parent="GridContainer"]
+[node name="Empty7" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelSportsValue" type="Label" parent="GridContainer"]
+[node name="LabelSportsValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 8
+text = "0"
 
-[node name="LabelCuteToHot" type="Label" parent="GridContainer"]
+[node name="LabelCuteToHot" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label20" type="Label" parent="GridContainer"]
+[node name="Empty8" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelCuteToHotValue" type="Label" parent="GridContainer"]
+[node name="LabelCuteToHotValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 8
+text = "0"
 
-[node name="LabelSubToDom" type="Label" parent="GridContainer"]
+[node name="LabelSubToDom" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
+size_flags_horizontal = 0
+text = "0"
+vertical_alignment = 1
 
-[node name="Label21" type="Label" parent="GridContainer"]
+[node name="Empty9" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+vertical_alignment = 1
 
-[node name="LabelSubToDomValue" type="Label" parent="GridContainer"]
+[node name="LabelSubToDomValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "sfadfafasfffa"
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = -66.0
-offset_top = -46.0
-offset_right = 374.0
-offset_bottom = 274.0
+size_flags_horizontal = 8
+text = "0"

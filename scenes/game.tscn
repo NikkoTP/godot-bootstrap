@@ -46,8 +46,9 @@ subToDom = 0.553
 cuteToHot = 0.324
 metadata/_custom_type_script = "uid://d048fj6hgeu2i"
 
-[node name="Hoe3" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Hoe3" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("3_lnu2h")]
 position = Vector2(56, 66)
+stats = NodePath("Stats")
 
 [node name="Stats" type="Node" parent="Hoe3"]
 script = ExtResource("4_lbhrr")

@@ -67,6 +67,7 @@ func getNextFreeQueueSpot() -> Area2D:
 
 func generateRandomStats() -> Stats:
 	var stats = Stats.new()
+	stats.stamina = 100
 	stats.cuteToHot = randf_range(-1,1)
 	stats.subToDom = randf_range(-1,1)
 	stats.talk = randi_range(0,100)
