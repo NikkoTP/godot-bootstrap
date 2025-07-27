@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var stage = $Stage
+@onready var stage = $StageContainer/Stage
 @onready var spawnTimer: Timer = $SpawnTimer
 
 var johnScene = load("res://scenes/john.tscn")

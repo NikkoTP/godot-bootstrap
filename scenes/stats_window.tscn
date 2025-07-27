@@ -1,157 +1,207 @@
-[gd_scene load_steps=2 format=3 uid="uid://buqamrk34t3pe"]
+[gd_scene load_steps=2 format=3 uid="uid://dshjykyorhu1b"]
 
 [ext_resource type="Script" uid="uid://ixgcbj5gqm8a" path="res://scripts/stats_window.gd" id="1_06noq"]
 
 [node name="StatsWindow" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 71.0
-offset_bottom = 62.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_06noq")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 136.0
-offset_bottom = 222.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="LabelTitle" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 2
+text = "sfadfafasfffa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
 columns = 3
 
-[node name="Empty" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelStamina" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
-
-[node name="LabelTitle" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "sfadfafasfffa"
-
-[node name="Empty2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
-
-[node name="LabelStamina" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Empty3" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Spacer" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LabelStaminaValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelStaminaValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
 
-[node name="LabelTalk" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelTalk" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Empty4" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LabelTalkValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelTalkValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-
-[node name="LabelRomance" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "0"
-vertical_alignment = 1
-
-[node name="Empty5" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
-
-[node name="LabelRomanceValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
 
-[node name="LabelParty" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelRomance" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Empty6" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Spacer3" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LabelPartyValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelRomanceValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-
-[node name="LabelSports" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "0"
-vertical_alignment = 1
-
-[node name="Empty7" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
-
-[node name="LabelSportsValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
 
-[node name="LabelCuteToHot" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelParty" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Empty8" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Spacer4" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-vertical_alignment = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LabelCuteToHotValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelPartyValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
 
-[node name="LabelSubToDom" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LabelSports" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Empty9" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Spacer5" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelSportsValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="LabelSubToDom" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelSubToDomValue" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Spacer6" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelSubToDomValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="LabelCuteToHot" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer7" type="Control" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelCuteToHotValue" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 12
 text = "0"

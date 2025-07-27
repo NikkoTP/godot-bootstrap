@@ -9,24 +9,24 @@ const labelRomance = "Romance"
 const labelParty = "Party"
 const labelSports = "Sports"
 const labelSubToDom = "Sub ~ Dom"
-const labelCuteToDom = "Cute ~ Hot"
+const labelCuteToHot = "Cute ~ Hot"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$PanelContainer/MarginContainer/GridContainer/LabelTitle.text = labelTitle
-	$PanelContainer/MarginContainer/GridContainer/LabelStamina.text = labelStamina
-	$PanelContainer/MarginContainer/GridContainer/LabelTalk.text = labelTalk
-	$PanelContainer/MarginContainer/GridContainer/LabelRomance.text = labelRomance
-	$PanelContainer/MarginContainer/GridContainer/LabelParty.text = labelParty
-	$PanelContainer/MarginContainer/GridContainer/LabelSports.text = labelSports
-	$PanelContainer/MarginContainer/GridContainer/LabelSubToDom.text = labelSubToDom
-	$PanelContainer/MarginContainer/GridContainer/LabelCuteToHot.text = labelCuteToDom
+	$PanelContainer/VBoxContainer/MarginContainer/LabelTitle.text = labelTitle
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelStamina.text = labelStamina
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelTalk.text = labelTalk
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelRomance.text = labelRomance
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelParty.text = labelParty
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelSports.text = labelSports
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelSubToDom.text = labelSubToDom
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelCuteToHot.text = labelCuteToHot
 	
-	$PanelContainer/MarginContainer/GridContainer/LabelStaminaValue.text = str(stats.stamina)
-	$PanelContainer/MarginContainer/GridContainer/LabelTalkValue.text = str(stats.talk)
-	$PanelContainer/MarginContainer/GridContainer/LabelRomanceValue.text = str(stats.romance)
-	$PanelContainer/MarginContainer/GridContainer/LabelPartyValue.text = str(stats.party)
-	$PanelContainer/MarginContainer/GridContainer/LabelSportsValue.text = str(stats.sports)
-	$PanelContainer/MarginContainer/GridContainer/LabelSubToDomValue.text = str(stats.subToDom)
-	$PanelContainer/MarginContainer/GridContainer/LabelCuteToHotValue.text = str(stats.cuteToHot)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelStaminaValue.text = str(stats.stamina)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelTalkValue.text = str(stats.talk)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelRomanceValue.text = str(stats.romance)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelPartyValue.text = str(stats.party)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelSportsValue.text = str(stats.sports)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelSubToDomValue.text = str(stats.subToDom)
+	$PanelContainer/VBoxContainer/MarginContainer2/GridContainer/LabelCuteToHotValue.text = str(stats.cuteToHot)
