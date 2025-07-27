@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsu32cqs8ntkg"]
+[gd_scene load_steps=10 format=3 uid="uid://dsu32cqs8ntkg"]
 
 [ext_resource type="Script" uid="uid://bmxiqf5bdohas" path="res://scripts/john.gd" id="1_r0ebv"]
 [ext_resource type="Texture2D" uid="uid://i2ekqiiqb0c" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_uxisy"]
+[ext_resource type="Script" uid="uid://cc53e51uprmw6" path="res://scripts/StatsWindowSpawnert.gd" id="3_af6mu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0ebv"]
 atlas = ExtResource("1_uxisy")
@@ -44,6 +45,7 @@ radius = 5.0
 
 [node name="John" type="CharacterBody2D"]
 z_index = 4
+input_pickable = true
 script = ExtResource("1_r0ebv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -55,3 +57,7 @@ frame_progress = 0.701563
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_kgufq")
+
+[node name="StatsWindowSpawner" type="Node" parent="."]
+script = ExtResource("3_af6mu")
+metadata/_custom_type_script = "uid://cc53e51uprmw6"

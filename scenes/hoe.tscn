@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnr2xc1jdgbeu"]
+[gd_scene load_steps=10 format=3 uid="uid://dnr2xc1jdgbeu"]
 
 [ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/hoe.gd" id="1_ctsn0"]
 [ext_resource type="Texture2D" uid="uid://din0hewjrr1qb" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="2_ctsn0"]
+[ext_resource type="Script" uid="uid://cc53e51uprmw6" path="res://scripts/StatsWindowSpawnert.gd" id="3_kfu8c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfu8c"]
 atlas = ExtResource("2_ctsn0")
@@ -56,3 +57,7 @@ frame_progress = 0.701563
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_kgufq")
+
+[node name="StatsWindowSpawner" type="Node" parent="."]
+script = ExtResource("3_kfu8c")
+metadata/_custom_type_script = "uid://cc53e51uprmw6"
