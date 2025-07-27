@@ -6,6 +6,7 @@ const speed: float = 1
 @export var stats: Stats
 
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
+@onready var selectable: Selectable = $Selectable
 
 var moving: bool = false
 var destination: Area2D

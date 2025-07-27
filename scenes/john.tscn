@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsu32cqs8ntkg"]
+[gd_scene load_steps=11 format=3 uid="uid://dsu32cqs8ntkg"]
 
 [ext_resource type="Script" uid="uid://bmxiqf5bdohas" path="res://scripts/john.gd" id="1_r0ebv"]
 [ext_resource type="Texture2D" uid="uid://i2ekqiiqb0c" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_uxisy"]
 [ext_resource type="Script" uid="uid://cc53e51uprmw6" path="res://scripts/StatsWindowSpawnert.gd" id="3_af6mu"]
+[ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/Selectable.gd" id="4_bitlx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0ebv"]
 atlas = ExtResource("1_uxisy")
@@ -61,3 +62,7 @@ shape = SubResource("CircleShape2D_kgufq")
 [node name="StatsWindowSpawner" type="Node" parent="."]
 script = ExtResource("3_af6mu")
 metadata/_custom_type_script = "uid://cc53e51uprmw6"
+
+[node name="Selectable" type="Node" parent="."]
+script = ExtResource("4_bitlx")
+metadata/_custom_type_script = "uid://up0h0u2s3gi0"
