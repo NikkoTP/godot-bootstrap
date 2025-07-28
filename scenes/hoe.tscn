@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/hoe.gd" id="1_ctsn0"]
 [ext_resource type="Texture2D" uid="uid://din0hewjrr1qb" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="2_ctsn0"]
-[ext_resource type="Script" uid="uid://cc53e51uprmw6" path="res://scripts/StatsWindowSpawnert.gd" id="3_kfu8c"]
-[ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/Selectable.gd" id="4_qd68v"]
+[ext_resource type="Script" uid="uid://dubrws1r138vr" path="res://scripts/stats_window_spawner.gd" id="3_qd68v"]
+[ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/selectable.gd" id="4_c6qqu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfu8c"]
 atlas = ExtResource("2_ctsn0")
@@ -60,9 +60,9 @@ position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_kgufq")
 
 [node name="StatsWindowSpawner" type="Node" parent="."]
-script = ExtResource("3_kfu8c")
+script = ExtResource("3_qd68v")
 metadata/_custom_type_script = "uid://cc53e51uprmw6"
 
 [node name="Selectable" type="Node2D" parent="."]
-script = ExtResource("4_qd68v")
+script = ExtResource("4_c6qqu")
 metadata/_custom_type_script = "uid://up0h0u2s3gi0"
