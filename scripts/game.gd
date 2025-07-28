@@ -7,10 +7,15 @@ var johnScene = load("res://scenes/john.tscn")
 
 var queue: Array[Area2D]
 var spawnedJohns: Array[John]
+var hoes: Array[Hoe]
 var johnSpawnPoint: Vector2
+
+var selectedHoe: Hoe
+var selectedJohn: John
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	initHoes()
 	initSpawnPoint()
 	initQueuePositions()
 	startRound()
@@ -75,3 +80,17 @@ func generateRandomStats() -> Stats:
 	stats.party = randi_range(0,100)
 	stats.sports = randi_range(0,100)
 	return stats
+
+
+func initHoes() -> void:
+	var stageContainer = $StageContainer
+	var children = stageContainer.get_children()
+	for child: Node in children:
+		if(child is Hoe):
+			var hoe: Hoe = child
+			hoe.selectable.selected.connect(handleHoeSelected)
+			hoes.append(hoe)
+
+
+func handleHoeSelected() -> void:
+	print("hoe selected, print via signal handler")

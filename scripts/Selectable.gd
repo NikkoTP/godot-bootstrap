@@ -16,6 +16,7 @@ func select(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT):
 		print("Is selected")
 		spawnSelectedIcon()
+		print(selected.get_connections())
 		selected.emit()
 
 
