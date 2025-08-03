@@ -107,7 +107,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func deselectCurrentSelection(event: InputEvent) -> void:
 	if(not event.is_action_pressed("select")):
 		return
-		
+	
+	print("unhadled input select nowhere")
+	
 	if(not selectedJohn == null):
 		selectedJohn.selectable.deselect()
 		selectedJohn = null
