@@ -92,5 +92,5 @@ func initHoes() -> void:
 			hoes.append(hoe)
 
 
-func handleHoeSelected() -> void:
-	print("hoe selected, print via signal handler")
+func handleHoeSelected(character: CharacterBody2D) -> void:
+	selectedHoe = character

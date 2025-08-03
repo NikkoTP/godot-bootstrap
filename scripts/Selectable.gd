@@ -1,7 +1,7 @@
 class_name Selectable
 extends Node2D
 
-signal selected
+signal selected(character: CharacterBody2D)
 signal deselected
 
 var selectedIconScene = preload("res://scenes/selected_icon.tscn")
@@ -10,14 +10,12 @@ var selectedIcon: AnimatedSprite2D
 var isSelected = false
 
 
-func select(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+func select(event: InputEvent, character: CharacterBody2D) -> void:
 	if(event is InputEventMouseButton
 	and event.is_pressed() 
 	and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT):
-		print("Is selected")
 		spawnSelectedIcon()
-		print(selected.get_connections())
-		selected.emit()
+		selected.emit(character)
 
 
 
