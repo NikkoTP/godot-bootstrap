@@ -61,7 +61,6 @@ shape = SubResource("CircleShape2D_kgufq")
 
 [node name="StatsWindowSpawner" type="Node" parent="."]
 script = ExtResource("3_qd68v")
-metadata/_custom_type_script = "uid://cc53e51uprmw6"
 
 [node name="Selectable" type="Node2D" parent="."]
 script = ExtResource("4_c6qqu")

@@ -17,7 +17,6 @@ func _mouse_exit() -> void:
 	statsWindowSpawner.hideStatsWindow()
 
 
-
-
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)
+	get_tree().root.set_input_as_handled()
