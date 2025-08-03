@@ -55,8 +55,8 @@ func spawnJohn() -> void:
 	johnInstance.stats = generateRandomStats()
 	johnInstance.transform.origin = johnSpawnPoint
 	add_child(johnInstance)
+	johnInstance.selectable.selected.connect(handleJohnSelected)
 	spawnedJohns.append(johnInstance)
-	print("A john has spawned")
 	var freeQueueSpot = getNextFreeQueueSpot()
 	if(freeQueueSpot!=null):
 		johnInstance.moveToNextFreeQueueSpot(freeQueueSpot)
@@ -94,6 +94,10 @@ func initHoes() -> void:
 
 func handleHoeSelected(character: CharacterBody2D) -> void:
 	selectedHoe = character
+
+
+func handleJohnSelected(character: CharacterBody2D) -> void:
+	selectedJohn = character
 
 
 func _unhandled_input(event: InputEvent) -> void:
