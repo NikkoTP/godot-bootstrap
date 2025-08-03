@@ -15,7 +15,6 @@ func _mouse_enter() -> void:
 
 func _mouse_exit() -> void:
 	statsWindowSpawner.hideStatsWindow()
-
-
-func _unhandled_input(event: InputEvent) -> void:
+	
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)
