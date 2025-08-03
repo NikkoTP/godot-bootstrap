@@ -11,9 +11,7 @@ var isSelected = false
 
 
 func select(event: InputEvent, character: CharacterBody2D) -> void:
-	if(event is InputEventMouseButton
-	and event.is_pressed() 
-	and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT):
+	if(event.is_action_pressed("select")):
 		spawnSelectedIcon()
 		selected.emit(character)
 
