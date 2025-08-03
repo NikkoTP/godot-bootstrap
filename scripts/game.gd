@@ -94,3 +94,22 @@ func initHoes() -> void:
 
 func handleHoeSelected(character: CharacterBody2D) -> void:
 	selectedHoe = character
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	deselectCurrentSelection(event)
+
+
+func deselectCurrentSelection(event: InputEvent) -> void:
+	if(not event.is_action_pressed("select")):
+		return
+		
+	if(not selectedJohn == null):
+		selectedJohn.selectable.deselect()
+		selectedJohn = null
+		return
+	
+	if(not selectedHoe == null):
+		selectedHoe.selectable.deselect()
+		selectedHoe = null
+		return
