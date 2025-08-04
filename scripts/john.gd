@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const speed: float = 1
 
+signal stoppedMoving
+
 @export var stats: Stats
 
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
@@ -18,8 +20,9 @@ func _process(delta: float) -> void:
 
 func _moveToDestination(delta: float) -> void:
 	var currentPos = self.global_position
-	if(currentPos == destination):
+	if(currentPos.distance_to(destination) < 0.1):
 		moving = false
+		stoppedMoving.emit()
 		return
 	var vectorToMove = destination - currentPos
 	self.position += vectorToMove * delta * speed

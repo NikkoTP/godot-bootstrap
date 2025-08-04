@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://d048fj6hgeu2i" path="res://scripts/stats.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://4l6brk0lqv53" path="res://scripts/paths_to_follow_for_johns.gd" id="6_p57ef"]
 
-[sub_resource type="Curve2D" id="Curve2D_iywne"]
+[sub_resource type="Curve2D" id="Curve2D_u5sy4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -97, 70, 0, 0, 0, 0, -96, -26, 0, 0, 0, 0, -65, -23)
+"points": PackedVector2Array(0, 0, 0, 0, -97, 70, 0, 0, 0, 0, -97, 23, 0, 0, 0, 0, -17, 23, 0, 0, 0, 0, -17, -12, 0, 0, 0, 0, -1, -24)
 }
-point_count = 3
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_p57ef"]
 _data = {
@@ -19,11 +19,11 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_u5sy4"]
+[sub_resource type="Curve2D" id="Curve2D_iywne"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -33, 70, 0, 0, 0, 0, -32, 22, 0, 0, 0, 0, 48, 21, 0, 0, 0, 0, 48, -21, 0, 0, 0, 0, 65, -23)
+"points": PackedVector2Array(0, 0, 0, 0, -97, 70, 0, 0, 0, 0, -96, -26, 0, 0, 0, 0, -65, -23)
 }
-point_count = 5
+point_count = 3
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
@@ -54,7 +54,7 @@ cuteToHot = -0.552
 metadata/_custom_type_script = "uid://d048fj6hgeu2i"
 
 [node name="Path2D" type="Path2D" parent="StageContainer/Hoe"]
-curve = SubResource("Curve2D_iywne")
+curve = SubResource("Curve2D_u5sy4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="StageContainer/Hoe/Path2D"]
 position = Vector2(-97, 70)
@@ -102,10 +102,11 @@ cuteToHot = -0.47
 metadata/_custom_type_script = "uid://d048fj6hgeu2i"
 
 [node name="Path2D" type="Path2D" parent="StageContainer/Hoe3"]
-curve = SubResource("Curve2D_u5sy4")
+position = Vector2(64, 0)
+curve = SubResource("Curve2D_iywne")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="StageContainer/Hoe3/Path2D"]
-position = Vector2(-33, 70)
+position = Vector2(-97, 70)
 rotation = -1.56038
 rotates = false
 loop = false
