@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb7bkeb8rtyse"]
+[gd_scene load_steps=10 format=3 uid="uid://bb7bkeb8rtyse"]
 
 [ext_resource type="Script" uid="uid://cdu3ieqp6gfk7" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://lqllx4bhg378" path="res://scenes/stage1.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://ch3o2t286utub" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dnr2xc1jdgbeu" path="res://scenes/hoe.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://d048fj6hgeu2i" path="res://scripts/stats.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://4l6brk0lqv53" path="res://scripts/paths_to_follow_for_johns.gd" id="6_p57ef"]
 
 [sub_resource type="Curve2D" id="Curve2D_iywne"]
 _data = {
@@ -60,6 +61,7 @@ position = Vector2(-97, 70)
 rotation = -1.56038
 rotates = false
 loop = false
+script = ExtResource("6_p57ef")
 
 [node name="Hoe2" parent="StageContainer" node_paths=PackedStringArray("stats") instance=ExtResource("3_lnu2h")]
 position = Vector2(88, 66)
@@ -83,6 +85,7 @@ position = Vector2(-65, 70)
 rotation = -1.56038
 rotates = false
 loop = false
+script = ExtResource("6_p57ef")
 
 [node name="Hoe3" parent="StageContainer" node_paths=PackedStringArray("stats") instance=ExtResource("3_lnu2h")]
 position = Vector2(56, 66)
@@ -106,3 +109,4 @@ position = Vector2(-33, 70)
 rotation = -1.56038
 rotates = false
 loop = false
+script = ExtResource("6_p57ef")

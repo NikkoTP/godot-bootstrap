@@ -103,6 +103,7 @@ func handleHoeSelected(character: CharacterBody2D) -> void:
 		selectedHoe = character
 	
 	selectedHoe.selectable.confirmSelected()
+	checkMatch()
 
 
 func handleJohnSelected(character: CharacterBody2D) -> void:
@@ -116,6 +117,7 @@ func handleJohnSelected(character: CharacterBody2D) -> void:
 		selectedJohn = character
 	
 	selectedJohn.selectable.confirmSelected()
+	checkMatch()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -137,3 +139,9 @@ func deselectCurrentSelection(event: InputEvent) -> void:
 		selectedHoe.selectable.deselect()
 		selectedHoe = null
 		return
+
+func checkMatch() -> void:
+	if(selectedHoe == null or selectedJohn == null):
+		return
+	
+	selectedJohn.reparent(selectedHoe.pathToFollow, false)
