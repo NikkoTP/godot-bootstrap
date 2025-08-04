@@ -9,20 +9,23 @@ const speed: float = 1
 @onready var selectable: Selectable = $Selectable
 
 var moving: bool = false
-var destination: Area2D
+var destination: Vector2
 
 func _process(delta: float) -> void:
 	if(moving):
-		moveToDestination(delta)
+		_moveToDestination(delta)
 
 
-func moveToDestination(delta: float) -> void:
-	var currentPos = self.transform.origin
-	var vectorToMove = destination.transform.origin - currentPos
+func _moveToDestination(delta: float) -> void:
+	var currentPos = self.global_position
+	if(currentPos == destination):
+		moving = false
+		return
+	var vectorToMove = destination - currentPos
 	self.position += vectorToMove * delta * speed
+	
 
-
-func moveToNextFreeQueueSpot(destination: Area2D) -> void:
+func moveToNextDestination(destination: Vector2) -> void:
 	moving = true
 	self.destination = destination
 

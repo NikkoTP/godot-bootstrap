@@ -4,7 +4,8 @@ extends CharacterBody2D
 @export var stats: Stats
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
-@onready var pathToFollow: PathFollow2D = $"Path2D/PathFollow2D"
+@onready var path: Path2D = $Path2D
+@onready var pathToFollow: PathFollow2D = $Path2D/PathFollow2D
 
 func _ready() -> void:
 	pass

@@ -59,7 +59,7 @@ func spawnJohn() -> void:
 	spawnedJohns.append(johnInstance)
 	var freeQueueSpot = getNextFreeQueueSpot()
 	if(freeQueueSpot!=null):
-		johnInstance.moveToNextFreeQueueSpot(freeQueueSpot)
+		johnInstance.moveToNextDestination(freeQueueSpot.transform.origin)
 	restartSpawnTimer()
 
 
@@ -144,4 +144,6 @@ func checkMatch() -> void:
 	if(selectedHoe == null or selectedJohn == null):
 		return
 	
-	selectedJohn.reparent(selectedHoe.pathToFollow, false)
+	var startOfPath = selectedHoe.path.curve.get_point_position(0)
+	selectedJohn.moveToNextDestination(startOfPath)
+	#selectedJohn.reparent(selectedHoe.pathToFollow)
