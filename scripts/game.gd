@@ -103,12 +103,10 @@ func handleJohnSelected(character: CharacterBody2D) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	deselectCurrentSelection(event)
 
-
+#This thing is an issue, due to the input pipeline with physics being at the end.
 func deselectCurrentSelection(event: InputEvent) -> void:
-	if(not event.is_action_pressed("select")):
+	if(not event.is_action_pressed("deselect")):
 		return
-	
-	print("unhadled input select nowhere")
 	
 	if(not selectedJohn == null):
 		selectedJohn.selectable.deselect()

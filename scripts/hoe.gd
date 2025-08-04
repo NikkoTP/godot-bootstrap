@@ -18,3 +18,4 @@ func _mouse_exit() -> void:
 	
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)
+	

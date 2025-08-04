@@ -16,7 +16,7 @@ func select(event: InputEvent, character: CharacterBody2D) -> void:
 			
 	spawnSelectedIcon()
 	selected.emit(character)
-
+	
 
 func deselect() -> void:
 	isSelected = false
