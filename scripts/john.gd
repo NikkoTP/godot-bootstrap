@@ -27,11 +27,19 @@ func moveToNextFreeQueueSpot(destination: Area2D) -> void:
 	self.destination = destination
 
 func _mouse_enter() -> void:
+	print("john mouse enter")
 	statsWindowSpawner.showStatsWindow(stats)
+	selectable.isHovered = true
 
 
 func _mouse_exit() -> void:
+	print("Johne mouse exit")
 	statsWindowSpawner.hideStatsWindow()
+	selectable.isHovered = false
+
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#selectable.select(event,self)
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)

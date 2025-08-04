@@ -93,11 +93,29 @@ func initHoes() -> void:
 
 
 func handleHoeSelected(character: CharacterBody2D) -> void:
-	selectedHoe = character
+	if(selectedHoe == character):
+		return
+		
+	if(selectedHoe == null):
+		selectedHoe = character
+	else:
+		selectedHoe.selectable.deselect()
+		selectedHoe = character
+	
+	selectedHoe.selectable.confirmSelected()
 
 
 func handleJohnSelected(character: CharacterBody2D) -> void:
-	selectedJohn = character
+	if(selectedJohn == character):
+		return
+		
+	if(selectedJohn == null):
+		selectedJohn = character
+	else:
+		selectedJohn.selectable.deselect()
+		selectedJohn = character
+	
+	selectedJohn.selectable.confirmSelected()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -107,6 +125,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func deselectCurrentSelection(event: InputEvent) -> void:
 	if(not event.is_action_pressed("deselect")):
 		return
+	
+	print("in deselectCurrentSelection.")
 	
 	if(not selectedJohn == null):
 		selectedJohn.selectable.deselect()
