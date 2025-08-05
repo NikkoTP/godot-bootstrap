@@ -9,6 +9,7 @@ var selectedIcon: AnimatedSprite2D
 
 var isHovered = false
 var isSelected = false
+var matched = false
 
 
 func select(event: InputEvent, character: CharacterBody2D) -> void:
@@ -26,6 +27,11 @@ func deselect() -> void:
 	despawnSelectedIcon()
 	deselected.emit()
 	
+func match() -> void:
+	deselect()
+	matched = true
+	
+	
 func confirmSelected() -> void:
 	isSelected = true
 	spawnSelectedIcon()
@@ -37,6 +43,8 @@ func spawnSelectedIcon() -> void:
 
 
 func despawnSelectedIcon() -> void:
+	if(selectedIcon == null):
+		return
 	print("despawing selected icon")
 	selectedIcon.visible = false
 	selectedIcon.stop()

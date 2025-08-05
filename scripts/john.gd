@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 
 func _moveToDestination(delta: float) -> void:
 	var currentPos = self.global_position
-	if(currentPos.distance_to(destination) < 0.1):
+	if(currentPos.distance_to(destination) < 1):
 		moving = false
 		stoppedMoving.emit()
 		return

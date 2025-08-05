@@ -147,7 +147,12 @@ func checkMatch() -> void:
 	var startOfPath = selectedHoe.path.curve.get_point_position(0) + selectedHoe.path.global_position
 	selectedJohn.stoppedMoving.connect(startFollowingPath)
 	selectedJohn.moveToNextDestination(startOfPath)
-
+	
+	selectedHoe.selectable.match()
+	selectedJohn.selectable.match()
+	
 func startFollowingPath() -> void:
 	selectedJohn.position = selectedHoe.path.curve.get_point_position(0) + selectedHoe.path.global_position
 	selectedJohn.reparent(selectedHoe.pathToFollow)
+	selectedJohn = null
+	selectedHoe = null
