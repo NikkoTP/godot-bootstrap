@@ -13,6 +13,8 @@ var johnSpawnPoint: Vector2
 var selectedHoe: Hoe
 var selectedJohn: John
 
+var matches = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initHoes()
@@ -150,9 +152,11 @@ func checkMatch() -> void:
 	
 	selectedHoe.selectable.match()
 	selectedJohn.selectable.match()
-	
-func startFollowingPath() -> void:
-	selectedJohn.position = selectedHoe.path.curve.get_point_position(0) + selectedHoe.path.global_position
-	selectedJohn.reparent(selectedHoe.pathToFollow)
-	selectedJohn = null
+	matches[selectedJohn] = selectedHoe
 	selectedHoe = null
+	selectedJohn = null
+	
+func startFollowingPath(john: John) -> void:
+	var matchedHoe: Hoe = matches[john]
+	john.position = matchedHoe.path.curve.get_point_position(0) + matchedHoe.path.global_position
+	john.reparent(matchedHoe.pathToFollow)

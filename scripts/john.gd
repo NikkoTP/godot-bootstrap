@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const speed: float = 1
 
-signal stoppedMoving
+signal stoppedMoving(john: John)
 
 @export var stats: Stats
 
@@ -22,7 +22,7 @@ func _moveToDestination(delta: float) -> void:
 	var currentPos = self.global_position
 	if(currentPos.distance_to(destination) < 1):
 		moving = false
-		stoppedMoving.emit()
+		stoppedMoving.emit(self)
 		return
 	var vectorToMove = destination - currentPos
 	self.position += vectorToMove * delta * speed
