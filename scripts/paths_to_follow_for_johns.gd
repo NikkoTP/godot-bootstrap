@@ -1,4 +1,7 @@
+class_name PathsToFollowForJohns 
 extends PathFollow2D
+
+signal finishedPath(john: John)
 
 @export var speed: float = 0.4
 
@@ -11,6 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(hasJohnOnPath()):
 		progress_ratio += delta * speed
+		if(progress_ratio>=1):
+			finishedPath.emit(get_children()[0] as John)
+	
 	
 func hasJohnOnPath() -> bool:
 	return get_child_count() > 0

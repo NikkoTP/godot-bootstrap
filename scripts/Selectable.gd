@@ -11,6 +11,8 @@ var isHovered = false
 var isSelected = false
 var matched = false
 
+var matchedWith: CharacterBody2D
+
 
 func select(event: InputEvent, character: CharacterBody2D) -> void:
 	if(not event.is_action_pressed("select")):
@@ -27,7 +29,8 @@ func deselect() -> void:
 	despawnSelectedIcon()
 	deselected.emit()
 	
-func match() -> void:
+func match(matchedWith: CharacterBody2D) -> void:
+	self.matchedWith = matchedWith
 	deselect()
 	matched = true
 	
