@@ -5,9 +5,10 @@ extends CharacterBody2D
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
 @onready var path: Path2D = $Path2D
-@onready var pathToFollow: PathFollow2D = $Path2D/PathFollow2D
+@onready var pathToFollow: PathsToFollowForJohns = $Path2D/PathFollow2D
 
 func _ready() -> void:
+	pathToFollow.finishedPath.connect(johnReachedHoe)
 	pass
 
 
@@ -26,3 +27,12 @@ func _mouse_exit() -> void:
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)
+
+func johnReachedHoe() -> void:
+	serveJohn()
+	pass
+	
+
+func serveJohn() -> void:
+	print("serving hoe")
+	pass
