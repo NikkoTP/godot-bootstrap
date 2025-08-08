@@ -1,11 +1,15 @@
 class_name Hoe 
 extends CharacterBody2D
 
+var moneyScene = preload("res://scenes/money.tscn")
+
 @export var stats: Stats
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
 @onready var path: Path2D = $Path2D
 @onready var pathToFollow: PathsToFollowForJohns = $Path2D/PathFollow2D
+
+var animatedSpriteMoney: AnimatedSprite2D
 
 func _ready() -> void:
 	pathToFollow.finishedPath.connect(johnReachedHoe)
@@ -22,9 +26,6 @@ func _mouse_exit() -> void:
 	selectable.isHovered = false
 
 
-#func _unhandled_input(event: InputEvent) -> void:
-	#selectable.select(event,self)
-
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)
 
@@ -35,4 +36,25 @@ func johnReachedHoe() -> void:
 
 func serveJohn() -> void:
 	print("serving hoe")
-	pass
+	spawnMoneyIcon()
+	var simulationTimer = Timer.new()
+	simulationTimer.wait_time = 5
+	simulationTimer.one_shot = true
+	simulationTimer.autostart = true
+	simulationTimer.timeout.connect(finishServing)
+
+
+func finishServing() -> void:
+	despawnMoneyIcon()
+
+func spawnMoneyIcon() -> void:
+	animatedSpriteMoney = moneyScene.instantiate()
+	animatedSpriteMoney.position += Vector2(0,-8)
+	add_child(animatedSpriteMoney)
+	
+
+func despawnMoneyIcon() -> void:
+	animatedSpriteMoney.visible = false
+	animatedSpriteMoney.queue_free()
+	animatedSpriteMoney = null
+	
