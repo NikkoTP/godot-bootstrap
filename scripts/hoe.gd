@@ -10,6 +10,7 @@ var moneyScene = preload("res://scenes/money.tscn")
 @onready var pathToFollow: PathsToFollowForJohns = $Path2D/PathFollow2D
 
 var animatedSpriteMoney: AnimatedSprite2D
+var simulationTimer: Timer
 
 func _ready() -> void:
 	pathToFollow.finishedPath.connect(johnReachedHoe)
@@ -37,14 +38,18 @@ func johnReachedHoe() -> void:
 func serveJohn() -> void:
 	print("serving hoe")
 	spawnMoneyIcon()
-	var simulationTimer = Timer.new()
+	simulationTimer = Timer.new()
 	simulationTimer.wait_time = 5
 	simulationTimer.one_shot = true
 	simulationTimer.autostart = true
 	simulationTimer.timeout.connect(finishServing)
+	add_child(simulationTimer)
 
 
 func finishServing() -> void:
+	print("finishing serving")
+	simulationTimer.queue_free()
+	simulationTimer = null
 	despawnMoneyIcon()
 
 func spawnMoneyIcon() -> void:
