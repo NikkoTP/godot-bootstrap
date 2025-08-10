@@ -6,6 +6,8 @@ var statsWindow: StatsWindow
 
 
 func showStatsWindow(stats: Stats) -> void:
+	if(statsWindow != null):
+		return
 	statsWindow = statsWindowScene.instantiate()
 	statsWindow.stats = stats
 	add_child(statsWindow)

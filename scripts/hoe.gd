@@ -4,13 +4,16 @@ extends CharacterBody2D
 var moneyScene = preload("res://scenes/money.tscn")
 
 @export var stats: Stats
+@export var servingTime: float = 30
+@export var servingScoreTime: float = 5
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
 @onready var path: Path2D = $Path2D
 @onready var pathToFollow: PathsToFollowForJohns = $Path2D/PathFollow2D
 
 var animatedSpriteMoney: AnimatedSprite2D
-var simulationTimer: Timer
+var servingTimer: Timer
+var servingScoreTimer: Timer
 
 func _ready() -> void:
 	pathToFollow.finishedPath.connect(johnReachedHoe)
@@ -38,18 +41,13 @@ func johnReachedHoe() -> void:
 func serveJohn() -> void:
 	print("serving hoe")
 	spawnMoneyIcon()
-	simulationTimer = Timer.new()
-	simulationTimer.wait_time = 5
-	simulationTimer.one_shot = true
-	simulationTimer.autostart = true
-	simulationTimer.timeout.connect(finishServing)
-	add_child(simulationTimer)
+	add_child(getServingScoreTimer())
 
 
 func finishServing() -> void:
 	print("finishing serving")
-	simulationTimer.queue_free()
-	simulationTimer = null
+	despawnServingScoreTimer()
+	despawnServingTimer()
 	despawnMoneyIcon()
 
 func spawnMoneyIcon() -> void:
@@ -62,4 +60,39 @@ func despawnMoneyIcon() -> void:
 	animatedSpriteMoney.visible = false
 	animatedSpriteMoney.queue_free()
 	animatedSpriteMoney = null
+	
+func getServingScoreTimer() -> Timer:
+	if(servingScoreTimer!=null):
+		return servingScoreTimer
+	
+	servingScoreTimer = Timer.new()
+	servingScoreTimer.wait_time = servingScoreTime
+	servingScoreTimer.one_shot = false
+	servingScoreTimer.autostart = true
+	servingScoreTimer.timeout.connect(score)
+	return servingScoreTimer
+
+
+func getServingTimer() -> Timer:
+	if(servingTimer!=null):
+		return servingTimer
+	
+	servingTimer = Timer.new()
+	servingTimer.wait_time = servingTime
+	servingTimer.one_shot = true
+	servingTimer.autostart = true
+	servingTimer.timeout.connect(finishServing)
+	return servingScoreTimer
+	
+func despawnServingTimer() -> void:
+	servingTimer.queue_free()
+	servingScoreTimer = null
+
+
+func despawnServingScoreTimer() -> void:
+	servingScoreTimer.queue_free()
+	servingScoreTimer = null
+
+func score() -> void:
+	print("Scored!")
 	
