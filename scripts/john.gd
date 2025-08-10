@@ -1,11 +1,12 @@
 class_name John 
 extends CharacterBody2D
 
-const speed: float = 1
+const speed: float = 100
 
 signal stoppedMoving(john: John)
 
 @export var stats: Stats
+@export var basePayRate: float = 3
 
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
@@ -25,6 +26,7 @@ func _moveToDestination(delta: float) -> void:
 		stoppedMoving.emit(self)
 		return
 	var vectorToMove = destination - currentPos
+	vectorToMove = vectorToMove.normalized()
 	self.position += vectorToMove * delta * speed
 	
 
@@ -43,9 +45,6 @@ func _mouse_exit() -> void:
 	statsWindowSpawner.hideStatsWindow()
 	selectable.isHovered = false
 
-
-#func _unhandled_input(event: InputEvent) -> void:
-	#selectable.select(event,self)
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	selectable.select(event, self)
