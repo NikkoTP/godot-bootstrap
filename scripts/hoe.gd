@@ -96,6 +96,9 @@ func despawnServingScoreTimer() -> void:
 
 func score() -> void:
 	var client = selectable.matchedWith as John
-	#client.st
+	var compareResult = self.stats.compareTo(client.stats)
+	#TODO: Apply/create algo for scoring
 	print("Scored!")
 	
+func calculateScore(basePayRate: float, compareResult: Stats) -> float:
+	return 0

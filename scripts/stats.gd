@@ -18,9 +18,10 @@ func compareTo(stats: Stats) -> Stats:
 	
 	# stamina isn't relevant in compare-result
 	compareResult.stamina = 100
-	
 	compareResult.talk  = self.talk - stats.talk
 	compareResult.romance = self.romance - stats.romance
 	compareResult.party = self.party - stats.party
 	compareResult.sports = self.sports - stats.sports
-	return null
+	compareResult.subToDom = self.subToDom - stats.subToDom
+	compareResult.cuteToHot = self.cuteToHot - stats.cuteToHot
+	return compareResult
