@@ -4,8 +4,8 @@ extends CharacterBody2D
 var moneyScene = preload("res://scenes/money.tscn")
 
 @export var stats: Stats
-@export var servingTime: float = 30
-@export var servingScoreTime: float = 5
+@export var servingTime: float = 8.1
+@export var servingScoreTime: float = 2
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
 @onready var path: Path2D = $Path2D
@@ -41,6 +41,7 @@ func johnReachedHoe() -> void:
 func serveJohn() -> void:
 	print("serving hoe")
 	spawnMoneyIcon()
+	add_child(getServingTimer())
 	add_child(getServingScoreTimer())
 
 
@@ -82,7 +83,7 @@ func getServingTimer() -> Timer:
 	servingTimer.one_shot = true
 	servingTimer.autostart = true
 	servingTimer.timeout.connect(finishServing)
-	return servingScoreTimer
+	return servingTimer
 	
 func despawnServingTimer() -> void:
 	servingTimer.queue_free()
@@ -94,5 +95,7 @@ func despawnServingScoreTimer() -> void:
 	servingScoreTimer = null
 
 func score() -> void:
+	var client = selectable.matchedWith as John
+	#client.st
 	print("Scored!")
 	
