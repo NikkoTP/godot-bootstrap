@@ -6,6 +6,8 @@ var moneyScene = preload("res://scenes/money.tscn")
 @export var stats: Stats
 @export var servingTime: float = 8.1
 @export var servingScoreTime: float = 2
+@export var staminaCostFactor: float = 0.003
+@export var revenueCut: float = 0.4
 @onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
 @onready var selectable: Selectable = $Selectable
 @onready var path: Path2D = $Path2D
@@ -97,8 +99,36 @@ func despawnServingScoreTimer() -> void:
 func score() -> void:
 	var client = selectable.matchedWith as John
 	var compareResult = self.stats.compareTo(client.stats)
-	#TODO: Apply/create algo for scoring
-	print("Scored!")
+	var scored = calculateScore(client.basePayRate,compareResult)
+	print("Scored: " + str(scored))
 	
 func calculateScore(basePayRate: float, compareResult: Stats) -> float:
+	var score: float = 0
+	score += calculateScoreOrApplyStaminaCostForSingleStat(basePayRate,compareResult.talk)
+	score += calculateScoreOrApplyStaminaCostForSingleStat(basePayRate,compareResult.romance)
+	score += calculateScoreOrApplyStaminaCostForSingleStat(basePayRate,compareResult.party)
+	score += calculateScoreOrApplyStaminaCostForSingleStat(basePayRate,compareResult.sports)
+	
+	#score = calculateScoreOrApplyStaminaCostForSingleNatureStat(score,compareResult.cuteToHot)
+	#score = calculateScoreOrApplyStaminaCostForSingleNatureStat(score,compareResult.subToDom)
+	
+	score = applyRevenueCut(score)
+	return score
+
+func calculateScoreOrApplyStaminaCostForSingleStat(basePayRate: float, statValue: float) -> float:
+	print("statValue diff is: " + str(statValue))
+	if(statValue >= 0):
+		return basePayRate * statValue
+	else:
+		applyStaminaCost(statValue)
+		return 0
+
+func calculateScoreOrApplyStaminaCostForSingleNatureStat(score: float, statValue: float) -> float:
 	return 0
+	
+func applyRevenueCut(score: float) -> float:
+	return score * (1-revenueCut)
+
+func applyStaminaCost(statDiff: float) -> void:
+	self.stats.stamina -= abs(statDiff)*staminaCostFactor
+	print("applied stamina penalty. New stamina value: " + str(self.stats.stamina))

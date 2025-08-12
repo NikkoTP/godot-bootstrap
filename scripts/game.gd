@@ -77,10 +77,10 @@ func generateRandomStats() -> Stats:
 	stats.stamina = 100
 	stats.cuteToHot = randf_range(-1,1)
 	stats.subToDom = randf_range(-1,1)
-	stats.talk = randi_range(0,100)
-	stats.romance = randi_range(0,100)
-	stats.party = randi_range(0,100)
-	stats.sports = randi_range(0,100)
+	stats.talk = randi_range(0,10)
+	stats.romance = randi_range(0,10)
+	stats.party = randi_range(0,10)
+	stats.sports = randi_range(0,10)
 	return stats
 
 
