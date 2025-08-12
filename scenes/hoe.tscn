@@ -1,48 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnr2xc1jdgbeu"]
+[gd_scene load_steps=8 format=3 uid="uid://dnr2xc1jdgbeu"]
 
 [ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/hoe.gd" id="1_ctsn0"]
-[ext_resource type="Texture2D" uid="uid://din0hewjrr1qb" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="2_ctsn0"]
+[ext_resource type="Texture2D" uid="uid://lbnwavc03a0q" path="res://assets/miri_art/Unbenanntes_Projekt.png" id="2_qd68v"]
 [ext_resource type="Script" uid="uid://dubrws1r138vr" path="res://scripts/stats_window_spawner.gd" id="3_qd68v"]
 [ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/selectable.gd" id="4_c6qqu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kfu8c"]
-atlas = ExtResource("2_ctsn0")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qd68v"]
-atlas = ExtResource("2_ctsn0")
-region = Rect2(24, 24, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6qqu"]
-atlas = ExtResource("2_ctsn0")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gg3j7"]
-atlas = ExtResource("2_ctsn0")
-region = Rect2(72, 24, 24, 24)
+atlas = ExtResource("2_qd68v")
+region = Rect2(104, 248, 1912, 2080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vk180"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kfu8c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qd68v")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_c6qqu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gg3j7")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 4.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kgufq"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd68v"]
+size = Vector2(18, 20)
 
 [node name="Hoe" type="CharacterBody2D"]
 z_index = 4
@@ -50,14 +29,14 @@ input_pickable = true
 script = ExtResource("1_ctsn0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
 sprite_frames = SubResource("SpriteFrames_vk180")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.701563
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_kgufq")
+shape = SubResource("RectangleShape2D_qd68v")
 
 [node name="StatsWindowSpawner" type="Node" parent="."]
 script = ExtResource("3_qd68v")
