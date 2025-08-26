@@ -52,6 +52,7 @@ func finishServing() -> void:
 	despawnServingScoreTimer()
 	despawnServingTimer()
 	despawnMoneyIcon()
+	despawnServedJohn()
 
 func spawnMoneyIcon() -> void:
 	animatedSpriteMoney = moneyScene.instantiate()
@@ -63,6 +64,11 @@ func despawnMoneyIcon() -> void:
 	animatedSpriteMoney.visible = false
 	animatedSpriteMoney.queue_free()
 	animatedSpriteMoney = null
+	
+func despawnServedJohn() -> void:
+	var john = self.selectable.matchedWith as John
+	john.visible = false
+	john.queue_free()
 	
 func getServingScoreTimer() -> Timer:
 	if(servingScoreTimer!=null):

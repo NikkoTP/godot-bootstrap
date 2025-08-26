@@ -3,8 +3,6 @@ extends PathFollow2D
 
 signal finishedPath()
 
-var finishedPathSignalEmited: bool = false
-
 @export var speed: float = 0.4
 
 # Called when the node enters the scene tree for the first time.
@@ -16,9 +14,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(hasJohnOnPath()):
 		progress_ratio += delta * speed
-		if(progress_ratio>=1 and not finishedPathSignalEmited):
-			finishedPathSignalEmited = true
+		if(progress_ratio>=1):
+			var johnsOnPath = get_children()
+			for john in johnsOnPath:
+				john.reparent(self.get_parent())
+			progress_ratio = 0
 			finishedPath.emit()
+
 	
 	
 func hasJohnOnPath() -> bool:
