@@ -10,6 +10,7 @@ func showStatsWindow(stats: Stats) -> void:
 		return
 	statsWindow = statsWindowScene.instantiate()
 	statsWindow.stats = stats
+	#statsWindow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(statsWindow)
 
 

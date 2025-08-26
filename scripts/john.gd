@@ -41,7 +41,7 @@ func _mouse_enter() -> void:
 
 
 func _mouse_exit() -> void:
-	print("Johne mouse exit")
+	print("John mouse exit")
 	statsWindowSpawner.hideStatsWindow()
 	selectable.isHovered = false
 

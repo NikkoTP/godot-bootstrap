@@ -108,7 +108,7 @@ func handleHoeSelected(character: CharacterBody2D) -> void:
 	checkMatch()
 
 
-func handleJohnSelected(character: CharacterBody2D) -> void:
+func handleJohnSelected(character: CollisionObject2D) -> void:
 	if(selectedJohn == character):
 		return
 		

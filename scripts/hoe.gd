@@ -23,11 +23,13 @@ func _ready() -> void:
 
 
 func _mouse_enter() -> void:
+	print("hoe mouse enter")
 	statsWindowSpawner.showStatsWindow(stats)
 	selectable.isHovered = true
 
 
 func _mouse_exit() -> void:
+	print("hoe mouse exit")
 	statsWindowSpawner.hideStatsWindow()
 	selectable.isHovered = false
 

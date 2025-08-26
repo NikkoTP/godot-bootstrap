@@ -11,10 +11,10 @@ var isHovered = false
 var isSelected = false
 var matched = false
 
-var matchedWith: CharacterBody2D
+var matchedWith: CollisionObject2D
 
 
-func select(event: InputEvent, character: CharacterBody2D) -> void:
+func select(event: InputEvent, character: CollisionObject2D) -> void:
 	if(not event.is_action_pressed("select")):
 		return
 	
@@ -29,7 +29,7 @@ func deselect() -> void:
 	despawnSelectedIcon()
 	deselected.emit()
 	
-func match(matchedWith: CharacterBody2D) -> void:
+func match(matchedWith: CollisionObject2D) -> void:
 	self.matchedWith = matchedWith
 	deselect()
 	matched = true
