@@ -1,7 +1,7 @@
 class_name StateMachine
 extends Node
 
-var character: CharacterBody2D
+var character: Character
 
 var currentState: State
 
@@ -39,5 +39,11 @@ func process_physics(delta: float) -> void:
 		changeStateTo(newState)
 
 
+func mouse_enter() -> void:
+	currentState.mouse_enter()
+
+
+func mouse_exit() -> void:
+	currentState.mouse_exit()
 	
 	
