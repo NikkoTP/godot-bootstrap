@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://i2ekqiiqb0c" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_uxisy"]
 [ext_resource type="Script" uid="uid://dubrws1r138vr" path="res://scripts/stats_window_spawner.gd" id="3_bitlx"]
 [ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/selectable.gd" id="4_oigdq"]
-[ext_resource type="Script" uid="uid://bxs6ks12m5eow" path="res://state_machine.gd" id="5_fsnvj"]
-[ext_resource type="Script" uid="uid://ddiwk6b24ongt" path="res://scenes/queued.gd" id="6_w7w2l"]
+[ext_resource type="Script" uid="uid://bxs6ks12m5eow" path="res://scripts/state_machine/state_machine.gd" id="5_fsnvj"]
+[ext_resource type="Script" uid="uid://ddiwk6b24ongt" path="res://scripts/state_machine/queued.gd" id="6_w7w2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0ebv"]
 atlas = ExtResource("1_uxisy")

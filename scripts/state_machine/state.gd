@@ -14,6 +14,13 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
+func mouse_enter() -> void:
+	pass
+	
+
+func mouse_exit() -> void:
+	pass
+
 func process_input(event: InputEvent) -> State:
 	return null
 	
