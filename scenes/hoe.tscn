@@ -57,10 +57,6 @@ metadata/_custom_type_script = "uid://bxs6ks12m5eow"
 script = ExtResource("6_vk180")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"
 
-[node name="Selected" type="Node" parent="StateMachine"]
-script = ExtResource("6_eiybq")
-metadata/_custom_type_script = "uid://yql0tyi0s3c4"
-
 [node name="WaitingForClient" type="Node" parent="StateMachine"]
 script = ExtResource("6_eiybq")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"
