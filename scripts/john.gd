@@ -1,5 +1,5 @@
 class_name John 
-extends CharacterBody2D
+extends Character
 
 const speed: float = 100
 

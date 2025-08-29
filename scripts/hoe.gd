@@ -1,5 +1,5 @@
 class_name Hoe 
-extends CharacterBody2D
+extends Character
 
 var moneyScene = preload("res://scenes/money.tscn")
 

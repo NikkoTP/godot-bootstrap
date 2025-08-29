@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnr2xc1jdgbeu"]
+[gd_scene load_steps=11 format=3 uid="uid://dnr2xc1jdgbeu"]
 
 [ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/hoe.gd" id="1_ctsn0"]
 [ext_resource type="Texture2D" uid="uid://lbnwavc03a0q" path="res://assets/miri_art/Unbenanntes_Projekt.png" id="2_qd68v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/selectable.gd" id="4_c6qqu"]
 [ext_resource type="Script" uid="uid://bxs6ks12m5eow" path="res://scripts/state_machine/state_machine.gd" id="5_gg3j7"]
 [ext_resource type="Script" uid="uid://yql0tyi0s3c4" path="res://scripts/state_machine/state.gd" id="6_eiybq"]
+[ext_resource type="Script" uid="uid://de5qhagiihpo1" path="res://scripts/state_machine/idle.gd" id="6_vk180"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6qqu"]
 atlas = ExtResource("2_qd68v")
@@ -29,6 +30,7 @@ size = Vector2(18, 20)
 z_index = 4
 input_pickable = true
 script = ExtResource("1_ctsn0")
+metadata/_custom_type_script = "uid://c0u36epiby18r"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.01, 0.01)
@@ -52,7 +54,7 @@ script = ExtResource("5_gg3j7")
 metadata/_custom_type_script = "uid://bxs6ks12m5eow"
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("6_eiybq")
+script = ExtResource("6_vk180")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"
 
 [node name="Selected" type="Node" parent="StateMachine"]
