@@ -15,11 +15,13 @@ func exit() -> void:
 	pass
 
 func mouse_enter() -> void:
-	pass
+	print("mouse enter")
+	character.statsWindowSpawner.showStatsWindow(character.stats)
 	
 
 func mouse_exit() -> void:
-	pass
+	print("hoe mouse exit")
+	character.statsWindowSpawner.hideStatsWindow()
 
 func process_input(event: InputEvent) -> State:
 	return null
