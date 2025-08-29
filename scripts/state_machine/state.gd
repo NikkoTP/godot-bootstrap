@@ -1,10 +1,10 @@
 class_name State
 extends Node
 
-var character: CharacterBody2D
+var character: Character
 
 
-func init(character: CharacterBody2D) -> void:
+func init(character: Character) -> void:
 	self.character = character
 	
 	

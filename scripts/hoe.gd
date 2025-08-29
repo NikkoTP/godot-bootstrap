@@ -3,13 +3,10 @@ extends Character
 
 var moneyScene = preload("res://scenes/money.tscn")
 
-@export var stats: Stats
 @export var servingTime: float = 8.1
 @export var servingScoreTime: float = 2
 @export var staminaCostFactor: float = 0.003
 @export var revenueCut: float = 0.4
-@onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
-@onready var selectable: Selectable = $Selectable
 @onready var path: Path2D = $Path2D
 @onready var pathToFollow: PathsToFollowForJohns = $Path2D/PathFollow2D
 

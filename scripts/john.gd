@@ -5,11 +5,7 @@ const speed: float = 100
 
 signal stoppedMoving(john: John)
 
-@export var stats: Stats
 @export var basePayRate: float = 1
-
-@onready var statsWindowSpawner: StatsWindowSpawner = $StatsWindowSpawner
-@onready var selectable: Selectable = $Selectable
 
 var moving: bool = false
 var destination: Vector2
