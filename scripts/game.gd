@@ -152,7 +152,9 @@ func checkMatch() -> void:
 	
 	selectedHoe.selectable.match(selectedJohn)
 	selectedJohn.selectable.match(selectedHoe)
-	#matches[selectedJohn] = selectedHoe
+	
+	selectedHoe.stateMachine.changeStateTo(selectedHoe.stateWaitingForClient)
+	
 	selectedHoe = null
 	selectedJohn = null
 	

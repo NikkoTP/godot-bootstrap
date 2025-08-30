@@ -50,18 +50,19 @@ script = ExtResource("3_qd68v")
 script = ExtResource("4_c6qqu")
 metadata/_custom_type_script = "uid://up0h0u2s3gi0"
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("5_gg3j7")
 metadata/_custom_type_script = "uid://bxs6ks12m5eow"
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_vk180")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"
 
-[node name="WaitingForClient" type="Node" parent="StateMachine"]
+[node name="WaitingForClient" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_eiybq")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"
 
-[node name="ServingClient" type="Node" parent="StateMachine"]
+[node name="ServingClient" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("idleState")]
 script = ExtResource("8_vk180")
+idleState = NodePath("../Idle")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"

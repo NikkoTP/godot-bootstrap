@@ -48,7 +48,7 @@ func despawnMoneyIcon() -> void:
 	animatedSpriteMoney = null
 	
 func despawnServedJohn() -> void:
-	var john = self.selectable.matchedWith as John
+	var john = character.selectable.matchedWith as John
 	john.visible = false
 	john.queue_free()
 	
@@ -86,7 +86,7 @@ func despawnServingScoreTimer() -> void:
 
 func score() -> void:
 	var client = character.selectable.matchedWith as John
-	var compareResult = self.stats.compareTo(client.stats)
+	var compareResult = character.stats.compareTo(client.stats)
 	var scored = calculateScore(client.basePayRate,compareResult)
 	print("Scored: " + str(scored))
 	
