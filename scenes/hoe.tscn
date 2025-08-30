@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dnr2xc1jdgbeu"]
 
-[ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/hoe.gd" id="1_ctsn0"]
+[ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/characters/hoe.gd" id="1_ctsn0"]
 [ext_resource type="Texture2D" uid="uid://lbnwavc03a0q" path="res://assets/miri_art/Unbenanntes_Projekt.png" id="2_qd68v"]
-[ext_resource type="Script" uid="uid://dubrws1r138vr" path="res://scripts/stats_window_spawner.gd" id="3_qd68v"]
-[ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/selectable.gd" id="4_c6qqu"]
+[ext_resource type="Script" uid="uid://dubrws1r138vr" path="res://scripts/characters/components/stats_window_spawner.gd" id="3_qd68v"]
+[ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/characters/components/selectable.gd" id="4_c6qqu"]
 [ext_resource type="Script" uid="uid://bxs6ks12m5eow" path="res://scripts/state_machine/state_machine.gd" id="5_gg3j7"]
 [ext_resource type="Script" uid="uid://yql0tyi0s3c4" path="res://scripts/state_machine/state.gd" id="6_eiybq"]
 [ext_resource type="Script" uid="uid://de5qhagiihpo1" path="res://scripts/state_machine/idle.gd" id="6_vk180"]
