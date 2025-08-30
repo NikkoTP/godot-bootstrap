@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 			var johnsOnPath = get_children()
 			for john in johnsOnPath:
 				john.reparent(self.get_parent())
+				john = john as John
+				john.stateMachine.changeStateTo(john.stateGettingServed)
 			progress_ratio = 0
 			finishedPath.emit()
 

@@ -154,6 +154,7 @@ func checkMatch() -> void:
 	selectedJohn.selectable.match(selectedHoe)
 	
 	selectedHoe.stateMachine.changeStateTo(selectedHoe.stateWaitingForClient)
+	selectedJohn.stateMachine.changeStateTo(selectedJohn.stateWalkingToPath)
 	
 	selectedHoe = null
 	selectedJohn = null
@@ -162,3 +163,4 @@ func startFollowingPath(john: John) -> void:
 	var matchedHoe: Hoe = john.selectable.matchedWith as Hoe
 	john.position = matchedHoe.path.curve.get_point_position(0) + matchedHoe.path.global_position
 	john.reparent(matchedHoe.pathToFollow)
+	john.stateMachine.changeStateTo(john.stateWalkingToHoe)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsu32cqs8ntkg"]
+[gd_scene load_steps=15 format=3 uid="uid://dsu32cqs8ntkg"]
 
 [ext_resource type="Script" uid="uid://bmxiqf5bdohas" path="res://scripts/characters/john.gd" id="1_r0ebv"]
 [ext_resource type="Texture2D" uid="uid://i2ekqiiqb0c" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_uxisy"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://up0h0u2s3gi0" path="res://scripts/characters/components/selectable.gd" id="4_oigdq"]
 [ext_resource type="Script" uid="uid://bxs6ks12m5eow" path="res://scripts/state_machine/state_machine.gd" id="5_fsnvj"]
 [ext_resource type="Script" uid="uid://ddiwk6b24ongt" path="res://scripts/state_machine/queued.gd" id="6_w7w2l"]
+[ext_resource type="Script" uid="uid://ckirjrpf6xvjl" path="res://scripts/state_machine/walking_to_path.gd" id="7_f28jw"]
+[ext_resource type="Script" uid="uid://yql0tyi0s3c4" path="res://scripts/state_machine/state.gd" id="7_w7w2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0ebv"]
 atlas = ExtResource("1_uxisy")
@@ -75,4 +77,16 @@ metadata/_custom_type_script = "uid://bxs6ks12m5eow"
 
 [node name="Queued" type="Node2D" parent="StateMachine"]
 script = ExtResource("6_w7w2l")
+metadata/_custom_type_script = "uid://yql0tyi0s3c4"
+
+[node name="WalkingToPath" type="Node2D" parent="StateMachine"]
+script = ExtResource("7_f28jw")
+metadata/_custom_type_script = "uid://yql0tyi0s3c4"
+
+[node name="WalkingToHoe" type="Node2D" parent="StateMachine"]
+script = ExtResource("7_w7w2l")
+metadata/_custom_type_script = "uid://yql0tyi0s3c4"
+
+[node name="GettingServed" type="Node2D" parent="StateMachine"]
+script = ExtResource("7_w7w2l")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"

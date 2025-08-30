@@ -7,40 +7,32 @@ signal stoppedMoving(john: John)
 
 @export var basePayRate: float = 1
 
-var moving: bool = false
+@onready var stateMachine: StateMachine = $StateMachine
+@onready var stateWalkingToPath: State = $StateMachine/WalkingToPath
+@onready var stateWalkingToHoe: State = $StateMachine/WalkingToHoe
+@onready var stateGettingServed: State = $StateMachine/GettingServed
+
+var hasUnreachedDestination: bool = false
 var destination: Vector2
 
+func _ready() -> void:
+	stateMachine.init(self)
+
 func _process(delta: float) -> void:
-	if(moving):
-		_moveToDestination(delta)
+	stateMachine.process_frame(delta)
 
-
-func _moveToDestination(delta: float) -> void:
-	var currentPos = self.global_position
-	if(currentPos.distance_to(destination) < 1):
-		moving = false
-		stoppedMoving.emit(self)
-		return
-	var vectorToMove = destination - currentPos
-	vectorToMove = vectorToMove.normalized()
-	self.position += vectorToMove * delta * speed
-	
 
 func moveToNextDestination(destination: Vector2) -> void:
-	moving = true
+	hasUnreachedDestination = true
 	self.destination = destination
 
 func _mouse_enter() -> void:
-	print("john mouse enter")
-	statsWindowSpawner.showStatsWindow(stats)
-	selectable.isHovered = true
+	stateMachine.mouse_enter()
 
 
 func _mouse_exit() -> void:
-	print("John mouse exit")
-	statsWindowSpawner.hideStatsWindow()
-	selectable.isHovered = false
+	stateMachine.mouse_exit()
 
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
-	selectable.select(event, self)
+	stateMachine.process_input(event)
