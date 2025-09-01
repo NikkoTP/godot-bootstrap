@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var stage = $StageContainer/Stage
 @onready var spawnTimer: Timer = $SpawnTimer
+@onready var scoreBoard: ScoreBoard = $ScoreBoard
 
 var johnScene = load("res://scenes/john.tscn")
 
@@ -91,6 +92,7 @@ func initHoes() -> void:
 		if(child is Hoe):
 			var hoe: Hoe = child
 			hoe.selectable.selected.connect(handleHoeSelected)
+			hoe.scored.connect(scoreBoard.scored)
 			hoes.append(hoe)
 
 

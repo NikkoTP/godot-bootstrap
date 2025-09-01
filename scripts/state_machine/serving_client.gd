@@ -2,6 +2,8 @@ extends State
 
 var moneyScene = preload("res://scenes/money.tscn")
 
+#signal scored(amount: float)
+
 var finishedServing = false
 
 @export var servingScoreTime: float = 2
@@ -87,8 +89,10 @@ func despawnServingScoreTimer() -> void:
 func score() -> void:
 	var client = character.selectable.matchedWith as John
 	var compareResult = character.stats.compareTo(client.stats)
-	var scored = calculateScore(client.basePayRate,compareResult)
-	print("Scored: " + str(scored))
+	var scoredPoints = calculateScore(client.basePayRate,compareResult)
+	print("Scored: " + str(scoredPoints))
+	(character as Hoe).scored.emit(scoredPoints)
+	
 	
 func calculateScore(basePayRate: float, compareResult: Stats) -> float:
 	var score: float = 0

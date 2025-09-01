@@ -3,6 +3,8 @@ extends Character
 
 var moneyScene = preload("res://scenes/money.tscn")
 
+signal scored(amount: float)
+
 @export var servingTime: float = 8.1
 @export var servingScoreTime: float = 2
 @export var staminaCostFactor: float = 0.003
