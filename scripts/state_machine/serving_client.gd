@@ -1,6 +1,7 @@
 extends State
 
 var moneyScene = preload("res://scenes/money.tscn")
+var scoreEarnedScene = preload("res://scenes/score_earned.tscn")
 
 #signal scored(amount: float)
 
@@ -49,6 +50,12 @@ func despawnMoneyIcon() -> void:
 	animatedSpriteMoney.queue_free()
 	animatedSpriteMoney = null
 	
+func spawnScoreEarned(score: float) -> void:
+	var earnedScore: ScoreEarned = scoreEarnedScene.instantiate()
+	earnedScore.scoreEarned = score
+	add_child(earnedScore)
+	
+	
 func despawnServedJohn() -> void:
 	var john = character.selectable.matchedWith as John
 	john.visible = false
@@ -91,6 +98,7 @@ func score() -> void:
 	var compareResult = character.stats.compareTo(client.stats)
 	var scoredPoints = calculateScore(client.basePayRate,compareResult)
 	print("Scored: " + str(scoredPoints))
+	spawnScoreEarned(scoredPoints)
 	(character as Hoe).scored.emit(scoredPoints)
 	
 	
