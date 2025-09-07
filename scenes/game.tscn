@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bb7bkeb8rtyse"]
+[gd_scene load_steps=13 format=3 uid="uid://bb7bkeb8rtyse"]
 
 [ext_resource type="Script" uid="uid://cdu3ieqp6gfk7" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://lqllx4bhg378" path="res://scenes/stage1.tscn" id="1_uwrxv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://4l6brk0lqv53" path="res://scripts/characters/components/paths_to_follow_for_johns.gd" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://blsx2m2w03yrn" path="res://scenes/score_board.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dxvkshkjrfnbd" path="res://scenes/day_board.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://dacf470lctyck" path="res://scenes/progress_button.tscn" id="9_0tnpc"]
 
 [sub_resource type="Curve2D" id="Curve2D_u5sy4"]
 _data = {
@@ -121,3 +122,5 @@ script = ExtResource("6_p57ef")
 [node name="ScoreBoard" parent="." instance=ExtResource("7_u5sy4")]
 
 [node name="DayBoard" parent="." instance=ExtResource("8_gee14")]
+
+[node name="ProgressButton" parent="." instance=ExtResource("9_0tnpc")]

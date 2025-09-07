@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dacf470lctyck"]
+
+[ext_resource type="StyleBox" uid="uid://xku88hb8uay7" path="res://styles/progress_button_hover.tres" id="1_7yio7"]
+[ext_resource type="StyleBox" uid="uid://dmy647s5ap6lk" path="res://styles/progress_button_pressed.tres" id="1_nmkvc"]
+[ext_resource type="StyleBox" uid="uid://4vilau1shlb0" path="res://styles/progress_button_normal.tres" id="3_8r7ip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yio7"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nmkvc"]
+device = -1
+keycode = 80
+unicode = 112
+
+[sub_resource type="Shortcut" id="Shortcut_3s1sm"]
+events = [SubResource("InputEventKey_nmkvc")]
+
+[node name="ProgressButton" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -10.0
+offset_right = -7.0
+offset_bottom = 19.0
+scale = Vector2(0.75, 0.75)
+
+[node name="Button" type="Button" parent="."]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7yio7")
+theme_override_styles/hover = ExtResource("1_7yio7")
+theme_override_styles/pressed = ExtResource("1_nmkvc")
+theme_override_styles/normal = ExtResource("3_8r7ip")
+shortcut = SubResource("Shortcut_3s1sm")
+text = "Open Business"

@@ -2,7 +2,9 @@ extends Node2D
 
 @onready var stage = $StageContainer/Stage
 @onready var spawnTimer: Timer = $SpawnTimer
+@onready var roundTimer: Timer = $RoundTimer
 @onready var scoreBoard: ScoreBoard = $ScoreBoard
+@onready var dayBoard: DayBoard = $DayBoard
 
 var johnScene = load("res://scenes/john.tscn")
 

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxvkshkjrfnbd"]
+[gd_scene load_steps=3 format=3 uid="uid://dxvkshkjrfnbd"]
+
+[ext_resource type="Script" uid="uid://b1sunh750lcrd" path="res://scripts/day_board.gd" id="1_vawf1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kkkiv"]
 font_size = 14
@@ -12,6 +14,7 @@ offset_top = -35.0
 offset_right = -140.0
 offset_bottom = -35.0
 mouse_filter = 2
+script = ExtResource("1_vawf1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
