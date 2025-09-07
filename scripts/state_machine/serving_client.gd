@@ -52,7 +52,7 @@ func despawnMoneyIcon() -> void:
 	
 func spawnScoreEarned(score: float) -> void:
 	var earnedScore: ScoreIndicator = scoreEarnedScene.instantiate()
-	earnedScore.scoreEarned = score
+	earnedScore.amount = score
 	add_child(earnedScore)
 	
 	

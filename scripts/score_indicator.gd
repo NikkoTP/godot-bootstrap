@@ -15,7 +15,7 @@ extends Node2D
 
 var originalPos: Vector2
 
-var scoreEarned: float = 0
+var amount: float = 0
 
 
 
@@ -23,7 +23,7 @@ var scoreEarned: float = 0
 
 
 func _ready() -> void:
-	label.text = prefix + " " + str(scoreEarned)
+	label.text = prefix + " " + str(amount)
 	self.global_position += spawnTransform
 	originalPos = self.global_position
 	

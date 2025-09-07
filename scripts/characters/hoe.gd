@@ -24,7 +24,7 @@ var servingScoreTimer: Timer
 func _ready() -> void:
 	pathToFollow.finishedPath.connect(johnReachedHoe)
 	newStamina.connect(staminaBar.updateStamina)
-	staminaBar.updateStamina(stats.stamina)
+	staminaBar.stamina = stats.stamina
 	stateMachine.init(self)
 
 func _process(delta: float) -> void:
