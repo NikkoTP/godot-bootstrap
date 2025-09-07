@@ -30,9 +30,17 @@ size = Vector2(18, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs7f6"]
 bg_color = Color(0.870588, 0.117647, 0.27451, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhx7f"]
 bg_color = Color(0, 0.857841, 0.282327, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="Hoe" type="CharacterBody2D"]
 z_index = 4
