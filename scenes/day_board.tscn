@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxvkshkjrfnbd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkkiv"]
+font_size = 14
+
+[node name="DayBoard" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -35.0
+offset_right = -140.0
+offset_bottom = -35.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 20.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Day 0"
+label_settings = SubResource("LabelSettings_kkkiv")
+vertical_alignment = 1
