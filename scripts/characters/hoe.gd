@@ -4,6 +4,7 @@ extends Character
 var moneyScene = preload("res://scenes/money.tscn")
 
 signal scored(amount: float)
+signal newStamina(stamina: int)
 
 @export var servingTime: float = 8.1
 @export var servingScoreTime: float = 2
@@ -14,6 +15,7 @@ signal scored(amount: float)
 @onready var stateMachine: StateMachine = $StateMachine
 @onready var stateWaitingForClient: State = $StateMachine/WaitingForClient
 @onready var stateServingClient: State = $StateMachine/ServingClient
+@onready var staminaBar: StaminaBar = $StaminaBar
 
 var animatedSpriteMoney: AnimatedSprite2D
 var servingTimer: Timer
@@ -21,6 +23,8 @@ var servingScoreTimer: Timer
 
 func _ready() -> void:
 	pathToFollow.finishedPath.connect(johnReachedHoe)
+	newStamina.connect(staminaBar.updateStamina)
+	staminaBar.updateStamina(stats.stamina)
 	stateMachine.init(self)
 
 func _process(delta: float) -> void:

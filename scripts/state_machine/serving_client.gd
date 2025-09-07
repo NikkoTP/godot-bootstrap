@@ -132,4 +132,5 @@ func applyRevenueCut(score: float) -> float:
 func applyStaminaCost(statDiff: float) -> void:
 	character.stats.stamina -= abs(statDiff)*character.staminaCostFactor
 	print("applied stamina penalty. New stamina value: " + str(character.stats.stamina))
+	(character as Hoe).newStamina.emit(character.stats.stamina)
 	

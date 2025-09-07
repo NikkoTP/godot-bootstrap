@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnr2xc1jdgbeu"]
+[gd_scene load_steps=15 format=3 uid="uid://dnr2xc1jdgbeu"]
 
 [ext_resource type="Script" uid="uid://by80733hbxr7i" path="res://scripts/characters/hoe.gd" id="1_ctsn0"]
 [ext_resource type="Texture2D" uid="uid://lbnwavc03a0q" path="res://assets/miri_art/Unbenanntes_Projekt.png" id="2_qd68v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://yql0tyi0s3c4" path="res://scripts/state_machine/state.gd" id="6_eiybq"]
 [ext_resource type="Script" uid="uid://de5qhagiihpo1" path="res://scripts/state_machine/idle.gd" id="6_vk180"]
 [ext_resource type="Script" uid="uid://yte3kpn64kcs" path="res://scripts/state_machine/serving_client.gd" id="8_vk180"]
+[ext_resource type="Script" uid="uid://c3vk0ib5felut" path="res://scripts/stamina_bar.gd" id="9_kgufq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6qqu"]
 atlas = ExtResource("2_qd68v")
@@ -26,6 +27,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qd68v"]
 size = Vector2(18, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs7f6"]
+bg_color = Color(0.870588, 0.117647, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhx7f"]
+bg_color = Color(0, 0.857841, 0.282327, 1)
 
 [node name="Hoe" type="CharacterBody2D"]
 z_index = 4
@@ -66,3 +73,16 @@ metadata/_custom_type_script = "uid://yql0tyi0s3c4"
 script = ExtResource("8_vk180")
 idleState = NodePath("../Idle")
 metadata/_custom_type_script = "uid://yql0tyi0s3c4"
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+z_index = 10
+offset_left = -12.0
+offset_top = 11.0
+offset_right = 12.0
+offset_bottom = 15.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hs7f6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dhx7f")
+step = 1.0
+show_percentage = false
+script = ExtResource("9_kgufq")
