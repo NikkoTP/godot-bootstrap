@@ -1,13 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnk285t78ofjd"]
 
-[ext_resource type="Script" uid="uid://d3674sb4xt1rl" path="res://scripts/score_earned.gd" id="1_ymr6m"]
+[ext_resource type="Script" uid="uid://b0xdop1puxdu8" path="res://scripts/score_indicator.gd" id="1_ymr6m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymr6m"]
-font_size = 12
 font_color = Color(0, 0.396078, 0.12549, 1)
 
 [node name="ScoreEarned" type="Node2D"]
 script = ExtResource("1_ymr6m")
+directionLimit = 32.0
+speed = 0.32
+prefix = "$"
+spawnTransform = Vector2(6, -10)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_right = 40.0

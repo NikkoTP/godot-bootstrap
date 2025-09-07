@@ -51,7 +51,7 @@ func despawnMoneyIcon() -> void:
 	animatedSpriteMoney = null
 	
 func spawnScoreEarned(score: float) -> void:
-	var earnedScore: ScoreEarned = scoreEarnedScene.instantiate()
+	var earnedScore: ScoreIndicator = scoreEarnedScene.instantiate()
 	earnedScore.scoreEarned = score
 	add_child(earnedScore)
 	
